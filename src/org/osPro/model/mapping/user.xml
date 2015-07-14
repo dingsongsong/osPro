@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user id="1">
+		<arriveTime>1</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="2">
+		<arriveTime>1</arriveTime>
+		<seriveTime>4</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="3">
+		<arriveTime>2</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>2</type>
+	</user>
+	<user id="4">
+		<arriveTime>4</arriveTime>
+		<seriveTime>2</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="5">
+		<arriveTime>1</arriveTime>
+		<seriveTime>5</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="6">
+		<arriveTime>1</arriveTime>
+		<seriveTime>1</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="7">
+		<arriveTime>8</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="8">
+		<arriveTime>5</arriveTime>
+		<seriveTime>6</seriveTime>
+		<type>2</type>
+	</user>
+	<user id="9">
+		<arriveTime>10</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>2</type>
+	</user>
+	<user id="10">
+		<arriveTime>4</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="11">
+		<arriveTime>4</arriveTime>
+		<seriveTime>4</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="12">
+		<arriveTime>2</arriveTime>
+		<seriveTime>13</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="13">
+		<arriveTime>5</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="14">
+		<arriveTime>10</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="15">
+		<arriveTime>14</arriveTime>
+		<seriveTime>6</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="16">
+		<arriveTime>13</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="17">
+		<arriveTime>12</arriveTime>
+		<seriveTime>6</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="18">
+		<arriveTime>16</arriveTime>
+		<seriveTime>4</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="19">
+		<arriveTime>11</arriveTime>
+		<seriveTime>10</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="20">
+		<arriveTime>7</arriveTime>
+		<seriveTime>4</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="21">
+		<arriveTime>4</arriveTime>
+		<seriveTime>10</seriveTime>
+		<type>1</type>
+	</user>
+	<user id="22">
+		<arriveTime>4</arriveTime>
+		<seriveTime>3</seriveTime>
+		<type>1</type>
+	</user>
+</users>
