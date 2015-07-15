@@ -27,8 +27,6 @@ td,#showInfo {
 		$("#operate").click(function() {
 			$("#msg").hide();
 			$("#showTime").hide();
-			$(this).next("div").toggle("normal");
-			$("#start").html("开始").css("color", "green");
 			$.ajax({
 				url : "user!operate.action",
 				type : "GET",
@@ -38,6 +36,11 @@ td,#showInfo {
 					$("#showInfo").show().html(msg);
 				}
 			});
+			if($("#showInfo").find("div").length == 0){
+				return false;
+			}
+			$(this).next("div").toggle("normal");
+			$("#start").html("开始").css("color", "green");
 		});
 		function run() {
 			if ($("#showInfo").find("div:visible").length == 0) {
@@ -76,10 +79,10 @@ td,#showInfo {
 			}
 		});
 		$("#end").click(function() {
-			$("#showTime").hide();
 			$("#msg").hide();
 			$("#showInfo div").show();
 			$("#start").html("开始").css("color", "green");
+			$("#showTime").hide();
 		});
 		$("#btn").click(
 				function() {
@@ -107,6 +110,35 @@ td,#showInfo {
 						$("#myForm").trigger("submit");
 					}
 				});
+		$("#loadXML").click(function() {
+			$("#msg").hide();
+			if ($(this).html() == "加载XML文件") {
+				$(this).html("撤销XML文件");
+				$.ajax({
+					url : "user!loadXML.action",
+					type : "GET",
+					data:{
+						"method":"join"
+					}
+				});
+
+			} else {
+				$(this).html("加载XML文件");
+				$.ajax({
+					url : "user!loadXML.action",
+					type : "GET",
+					data:{
+						"method":"quit"
+					}
+				});
+			}
+			$("#showTime").hide();
+			$("#showInfo").empty();
+			$("#operate").next("div").hide("normal");
+		});
+		$(":reset").click(function(){
+			$("#msg").hide();
+		});
 	});
 </script>
 </head>
@@ -114,12 +146,16 @@ td,#showInfo {
 	<fieldset id="myField"
 		style="padding: 10px 10px 10px 10px;border: 3px solid #666;width: 320px;">
 		<legend style="font-size: 13px;font-weight: bold;">读写平等的读写平等问题---by司航航,丁松松</legend>
-		<div id="showTime"
-			style="width: 100px;border: 2px solid #ffa200;border-bottom-width: 0px;height: 20px;font-weight: bold;font-size: 14px;padding: 3px;text-align: center;display: none;">当前时刻:1</div>
-		<div style="border: 2px solid #666;">
-			<div style="width: 300px;">
+		<div style="padding-right: 6px">
+			<div id="showTime"
+				style="width: 106px;border: 2px solid #ffa200;border-bottom-width: 0px;border-right-width:0px;height: 20px;font-weight: bold;font-size: 14px;padding: 3px;text-align: center;display: none;float: left;">当前时刻:1</div>
+			<div id="loadXML"
+				style="cursor: pointer;width: 190px;border: 2px solid #ffa200;border-bottom-width: 0px;height: 20px;font-size: 14px;padding: 3px;text-align: center;float: right;">加载XML文件</div>
+		</div>
+		<div style="border: 2px solid #666;float: left;">
+			<div style="width: 290px;">
 				<div id="zhuce"
-					style="padding: 5px;text-align: center;font-weight: bold;cursor: pointer;">添加读者写者</div>
+					style="padding: 5px;text-align: center;font-weight: bold;cursor: pointer;width: 300px;">添加读者写者</div>
 				<div
 					style="padding: 20px 5px 0px 20px;width: 290px;display: none;border-top: 1px dashed #666;">
 					<form action="user!add.action" method="post" id="myForm">
