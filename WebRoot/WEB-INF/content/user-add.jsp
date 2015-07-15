@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -36,7 +37,7 @@ td,#showInfo {
 					$("#showInfo").show().html(msg);
 				}
 			});
-			if($("#showInfo").find("div").length == 0){
+			if ($("#showInfo").find("div").length == 0) {
 				return false;
 			}
 			$(this).next("div").toggle("normal");
@@ -112,13 +113,13 @@ td,#showInfo {
 				});
 		$("#loadXML").click(function() {
 			$("#msg").hide();
-			if ($(this).html() == "加载XML文件") {
+			if (($(this).html()).replace(/^\s+|\s+$/g, "") == "加载XML文件") {
 				$(this).html("撤销XML文件");
 				$.ajax({
 					url : "user!loadXML.action",
 					type : "GET",
-					data:{
-						"method":"join"
+					data : {
+						"method" : "join"
 					}
 				});
 
@@ -127,8 +128,8 @@ td,#showInfo {
 				$.ajax({
 					url : "user!loadXML.action",
 					type : "GET",
-					data:{
-						"method":"quit"
+					data : {
+						"method" : "quit"
 					}
 				});
 			}
@@ -136,7 +137,7 @@ td,#showInfo {
 			$("#showInfo").empty();
 			$("#operate").next("div").hide("normal");
 		});
-		$(":reset").click(function(){
+		$(":reset").click(function() {
 			$("#msg").hide();
 		});
 	});
@@ -150,7 +151,12 @@ td,#showInfo {
 			<div id="showTime"
 				style="width: 106px;border: 2px solid #ffa200;border-bottom-width: 0px;border-right-width:0px;height: 20px;font-weight: bold;font-size: 14px;padding: 3px;text-align: center;display: none;float: left;">当前时刻:1</div>
 			<div id="loadXML"
-				style="cursor: pointer;width: 190px;border: 2px solid #ffa200;border-bottom-width: 0px;height: 20px;font-size: 14px;padding: 3px;text-align: center;float: right;">加载XML文件</div>
+				style="cursor: pointer;width: 190px;border: 2px solid #ffa200;border-bottom-width: 0px;height: 20px;font-size: 14px;padding: 3px;text-align: center;float: right;">
+				<c:choose>
+					<c:when test="${empty sessionScope.xmlUsers}">加载XML文件</c:when>
+					<c:otherwise>撤销XML文件</c:otherwise>
+				</c:choose>
+			</div>
 		</div>
 		<div style="border: 2px solid #666;float: left;">
 			<div style="width: 290px;">
